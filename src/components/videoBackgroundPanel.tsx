@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css';
 
 export interface VideoBackgroundPanelProps {
@@ -22,9 +22,11 @@ export class VideoBackground extends React.Component<VideoBackgroundProps> {
         this.videoRef = React.createRef();
     }
     
-    componentDidUpdate() {
-        if (this.videoRef.current)
+    componentDidUpdate(prevProps: Readonly<VideoBackgroundProps>) {
+        if (prevProps.url !== this.props.url && this.videoRef.current) {
             this.videoRef.current.load();
+            this.videoRef.current.play();
+        }
     }
 
     render() {
@@ -59,7 +61,7 @@ export class VideoBackgroundPanel extends React.Component<VideoBackgroundPanelPr
         return (
             <div id="background">
                 <div id="background-sheer" />
-                <VideoBackground url={this.props.videoUrls[this.state.videoIndex]} onVideoEnded={this.onVideoEnded} />
+                <VideoBackground url={this.props.videoUrls[this.state.videoIndex]} onVideoEnded={this.onVideoEnded.bind(this)} />
             </div>
         );
     }
@@ -70,7 +72,6 @@ export class VideoBackgroundPanel extends React.Component<VideoBackgroundPanelPr
 //         <source src={props.url} />
 //     </video>
 // )
-
 
 // export const VideoBackgroundPanel = (props: VideoBackgroundPanelProps) => {
 //     const [videoIndex, setVideoIndex] = useState(0);
