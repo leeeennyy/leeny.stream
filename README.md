@@ -11,7 +11,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Builds the app for production and puts it in the `build` folder in the root directory.
 
 #### `firebase serve`
-This is to check that everything in the `build` folder is as expected, as this is what Firebase will receive
+This is to check that everything in the `build` folder is as expected, as this is what Firebase will receive.
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 #### `firebase deploy`
