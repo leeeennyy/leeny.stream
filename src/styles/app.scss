@@ -22,7 +22,13 @@
     text-align: center;
     color: $primaryColor;
     font-family: 'Poppins', sans-serif;
-    transform: translateY(18vh);
+
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    
+    transform: translateY(5%);
 
     h1 {
         font-size: 8vh;
@@ -32,8 +38,6 @@
 
     p {
         font-size: 2vh;
-        width: 80vw;
-        margin-left: 10vw;
     }
 }
 
