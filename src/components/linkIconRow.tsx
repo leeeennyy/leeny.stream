@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faTwitch, faInstagram } from '@fortawesome/free-brands-svg-icons'
@@ -10,7 +9,7 @@ const twitterIcon = <FontAwesomeIcon icon={ faTwitter } />;
 const instagramIcon = <FontAwesomeIcon icon={ faInstagram } />;
 const emailIcon = <FontAwesomeIcon icon={ faEnvelope } />;
 
-export const LinkIconRow = () => (
+export const LinkIconRow: React.FunctionComponent = () => (
     <div id="link-icon-row">
         <IconButton url="https://twitch.tv/leeeennyy" icon={ twitchIcon } openInNewTab />
         <IconButton url="https://twitter.com/leeeennyy" icon={ twitterIcon } openInNewTab />

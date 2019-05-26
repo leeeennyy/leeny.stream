@@ -1,0 +1,47 @@
+@import './app-theme.scss';
+
+.button-padding {
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.rounded-button, .icon-rounded-button {
+    color: $primaryColor;
+    background-color: transparent;
+    border-color: $primaryColor;
+    border-radius: 3em;
+    border-style: solid;
+    border-width: 0.3vh;
+    text-transform: uppercase;
+    font-size: 2vh;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    user-select: none;
+    text-decoration: none;
+}
+
+.icon-rounded-button {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+}
+
+.rounded-button:hover,
+.icon-rounded-button:hover {
+    color: $accentColor;
+    background-color: $secondaryColorTransparency;
+    border-color: $accentColor;
+    cursor: pointer;
+}
+
+.rounded-button:active,
+.icon-rounded-button:active {
+    color: $primaryColor;
+    border-color: $primaryColor;
+    background-color: $accentColorTransparency;
+}

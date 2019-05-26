@@ -1,13 +1,23 @@
-$primaryColor: #FFFFFF;
-$secondaryColor: #000000;
-$secondaryColorTransparency: rgba(0, 0, 0, 0.6);
-$accentColor: #FFAA14;
-$accentColorTransparency: rgba(255, 170, 65, 0.6);
+@import './app-theme.scss';
+@import './button.scss';
 
-.brand {
+#background-sheer, #background-video {
+    background-color: rgba(20, 20, 20, 0.8);
+    position: absolute;
     width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -99;
 }
-  
+
+#background-video {
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
 #introduction-container {
     text-align: center;
     color: $primaryColor;
@@ -32,65 +42,3 @@ $accentColorTransparency: rgba(255, 170, 65, 0.6);
     padding-top: 1vh;
 }
 
-.button-padding {
-    padding-top: 2.5em;
-    padding-bottom: 2.5em;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-.rounded-button, .icon-rounded-button {
-    color: $primaryColor;
-    background-color: transparent;
-    border-color: $primaryColor;
-    border-radius: 3em;
-    border-style: solid;
-    border-width: 0.3vh;
-    text-transform: uppercase;
-    font-size: 2vh;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-left: 2em;
-    padding-right: 2em;
-    user-select: none;
-    text-decoration: none;
-}
-
-.icon-rounded-button {
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-    padding-left: 0.6em;
-    padding-right: 0.6em;
-}
-
-.rounded-button:hover,
-.icon-rounded-button:hover {
-    color: $accentColor;
-    background-color: $secondaryColorTransparency;
-    border-color: $accentColor;
-    cursor: pointer;
-}
-
-.rounded-button:active,
-.icon-rounded-button:active {
-    color: $primaryColor;
-    border-color: $primaryColor;
-    background-color: $accentColorTransparency;
-}
-
-#background-sheer, #background-video {
-    background-color: rgba(20, 20, 20, 0.8);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -99;
-}
-
-#background-video {
-    z-index: -100;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-}

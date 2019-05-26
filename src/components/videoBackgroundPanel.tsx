@@ -1,50 +1,18 @@
 import React from 'react';
-import '../styles/app.scss';
+import { VideoBackground } from './videoBackground';
 
-export interface VideoBackgroundPanelProps {
+interface VideoBackgroundPanelProps {
     videoUrls: string[];
-}
-
-interface VideoBackgroundProps {
-    url: string;
-    onVideoEnded: Function;
 }
 
 interface VideoBackgroundPanelState {
     videoIndex: number;
 }
 
-export class VideoBackground extends React.Component<VideoBackgroundProps> {
-    videoRef: React.RefObject<HTMLVideoElement>;
-
-    constructor(props: VideoBackgroundProps) {
-        super(props);
-        this.videoRef = React.createRef();
-    }
-    
-    componentDidUpdate(prevProps: Readonly<VideoBackgroundProps>) {
-        if (prevProps.url !== this.props.url && this.videoRef.current) {
-            this.videoRef.current.load();
-            this.videoRef.current.play();
-        }
-    }
-
-    render() {
-        return (
-            <video id="background-video" onEnded={() => this.props.onVideoEnded()} ref={this.videoRef} preload="auto" autoPlay muted>
-                <source src={this.props.url} />
-            </video>
-        )
-    }
-}
-
 export class VideoBackgroundPanel extends React.Component<VideoBackgroundPanelProps, VideoBackgroundPanelState> {
     constructor(props: VideoBackgroundPanelProps) {
         super(props);
-
-        this.state = {
-            videoIndex: 0
-        }
+        this.state = { videoIndex: 0 };
     }
 
     onVideoEnded(): void {
@@ -61,34 +29,8 @@ export class VideoBackgroundPanel extends React.Component<VideoBackgroundPanelPr
         return (
             <div id="background">
                 <div id="background-sheer" />
-                <VideoBackground url={this.props.videoUrls[this.state.videoIndex]} onVideoEnded={this.onVideoEnded.bind(this)} />
+                <VideoBackground url={ this.props.videoUrls[this.state.videoIndex] } onVideoEnded={ this.onVideoEnded.bind(this) } />
             </div>
         );
     }
 }
-
-// export const VideoBackground = (props: VideoBackgroundProps) => (
-//     <video id="background-video" className="background-video" onEnded={() => props.onVideoEnded()} autoPlay muted>
-//         <source src={props.url} />
-//     </video>
-// )
-
-// export const VideoBackgroundPanel = (props: VideoBackgroundPanelProps) => {
-//     const [videoIndex, setVideoIndex] = useState(0);
-//     const numberOfVideos = props.videoUrls.length - 1;
-
-//     function onVideoEnded() {
-//         if (videoIndex === numberOfVideos) {
-//             setVideoIndex(0);
-//         } else {
-//             setVideoIndex(videoIndex + 1);
-//         }
-//     };
-
-//     return (
-//         <div id="background">
-//             <div id="background-sheer" />
-//             [<VideoBackground url={props.videoUrls[videoIndex]} onVideoEnded={onVideoEnded} key={videoIndex} />]
-//         </div>
-//     );
-// }
