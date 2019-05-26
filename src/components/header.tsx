@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import '../App.css';
+import '../styles/app.scss';
 
 export interface HeaderProps {
     username: string;

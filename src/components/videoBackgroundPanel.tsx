@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import '../styles/app.scss';
 
 export interface VideoBackgroundPanelProps {
     videoUrls: string[];
@@ -31,7 +31,7 @@ export class VideoBackground extends React.Component<VideoBackgroundProps> {
 
     render() {
         return (
-            <video id="background-video" className="background-video" onEnded={() => this.props.onVideoEnded()} ref={this.videoRef} autoPlay muted>
+            <video id="background-video" onEnded={() => this.props.onVideoEnded()} ref={this.videoRef} preload="auto" autoPlay muted>
                 <source src={this.props.url} />
             </video>
         )
