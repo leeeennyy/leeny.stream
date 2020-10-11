@@ -13,7 +13,7 @@ export const LinkIconRow: React.FunctionComponent = () => (
     <div id="link-icon-row">
         <IconButton url="https://twitch.tv/leeeennyy" icon={ twitchIcon } openInNewTab />
         <IconButton url="https://twitter.com/leeeennyy" icon={ twitterIcon } openInNewTab />
-        <IconButton url="https://instagram.com/leeeennyy" icon={ instagramIcon } openInNewTab />
+        <IconButton url="https://instagram.com/leeeennyy__" icon={ instagramIcon } openInNewTab />
         <IconButton url="mailto:leeeennyy@gmail.com" icon={ emailIcon } />
     </div>
 );
