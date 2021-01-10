@@ -9,7 +9,7 @@ export const Introduction: React.FunctionComponent = () => (
         <p>Hey there!</p>
         <p>
           My name is Alena (Leeny). 
-          I am a developer by day, and I stream a variety of multi/singleplayer games and art in the evenings.
+          I am a developer by day, and I stream a variety of multi/singleplayer games and art in the evening.
         </p>
         <p>
           I look forward to seeing you on stream!
